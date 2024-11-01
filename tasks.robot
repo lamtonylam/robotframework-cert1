@@ -12,6 +12,7 @@ Insert the sales data for the week and export it as a PDF
     Log in
     Download the Excel file
     Fill the form using the data from the Excel file
+    Collect the results
 
 
 *** Keywords ***
@@ -42,3 +43,6 @@ Fill the form using the data from the Excel file
     FOR    ${sales_rep}    IN    @{sales_reps}
         Fill and submit the form for one person    ${sales_rep}
     END
+
+Collect the results
+    Screenshot    css:div.sales-summary    ${OUTPUT_DIR}${/}sales_summary.png
